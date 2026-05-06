@@ -1,3 +1,4 @@
 # Projeto de TCC
 
-## Apenas testando para ver se o commit vai funcionar
+## Este é o nosso projeto de TCC 
+### Em breve haverão atualizações...
