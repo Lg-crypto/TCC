@@ -1,0 +1,21 @@
+.container{
+    width: 80px;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    border-right: 2px solid var(--tertiary-color);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.navigation {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.link{
+    color: var(--font-color);
+}

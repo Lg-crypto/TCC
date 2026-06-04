@@ -10,9 +10,9 @@ export default function SetRoutes(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Welcome/>} />
-                <Route path="/app" element={<Home/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
+                <Route path="/app" element={<Home/>} />
             </Routes>
         </BrowserRouter>
     );
