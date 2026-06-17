@@ -8,13 +8,13 @@ export default function SideMenu (){
     return (
         <aside className={styles.container}>
             <nav className={styles.navigation}>
-                <Link to="/" className={styles.link}>
+                <Link to="/Login" className={styles.link}>
                     <IoPersonCircle size={45}></IoPersonCircle>
                 </Link>
                 <Link to="/" className={styles.link}>
                     <GoHomeFill size={40}></GoHomeFill>
                 </Link>
-                <Link to="/" className={styles.link}>
+                <Link to="/app" className={styles.link}>
                     <GoGraph size={40}></GoGraph>
                 </Link>
             </nav>

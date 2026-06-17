@@ -9,7 +9,7 @@ export default function Home() {
         <>
             <div className={styles.container}>
                 <SideMenu></SideMenu>
-                <Window width={630} height={400}>
+                <Window width="100%" height="400px">
                     <LineChart
                         name="Ganhos (%)"
                         categories={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']}
