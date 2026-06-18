@@ -4,12 +4,13 @@ import styles from "./window.module.css";
 interface WindowProps{
     width: string,
     height: string,
-    children?: ReactNode
+    padding?: string,
+    children?: ReactNode,
 }
 
-export default function Window ({width, height, children}: WindowProps) {
+export default function Window ({width, height, padding, children}: WindowProps) {
     return(
-        <div className={styles.window} style={{width: width, height: height}}>
+        <div className={styles.window} style={{width: width, height: height, padding}}>
             {children}
         </div>
     )

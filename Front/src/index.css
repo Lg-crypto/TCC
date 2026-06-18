@@ -1,13 +1,18 @@
 :root {
 
-  /* Variables  */
+  /* ======== Variables ======== */
+
+  /* Colors */
   --primary-color: #1B1B1D;
   --secondary-color: #212124;
   --tertiary-color: #535353;
-  --auxiliary-color: #02FFFF;
 
+  --auxiliary-bad-color: #FF0267;
+  --auxiliary-good-color: #02FFFF;
+
+  /* Fonts */
   --font-color: #D9D9D9;
-
+  --font-default: Arial, helvetica, sans-serif;
 }
 
 /*
@@ -25,6 +30,8 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-default);
 }
 
 body {

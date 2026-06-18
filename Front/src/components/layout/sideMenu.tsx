@@ -14,7 +14,7 @@ export default function SideMenu (){
                 <Link to="/" className={styles.link}>
                     <GoHomeFill size={40}></GoHomeFill>
                 </Link>
-                <Link to="/app" className={styles.link}>
+                <Link to="/home" className={styles.link}>
                     <GoGraph size={40}></GoGraph>
                 </Link>
             </nav>

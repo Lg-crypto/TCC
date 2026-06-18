@@ -33,7 +33,12 @@ export default function LineChart ({categories, name, data}: LineChartProps){
         fill: {
             type: 'horizontal',
             
-        }
+        },
+        //colors: ['#02FFFF', '#FF0267']
+
+        colors: [
+            (data[0] > data[data.length - 1]? '#FF0267' : '#02FFFF')
+        ]
     };
 
     const series: ApexNonAxisChartSeries = [

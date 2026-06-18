@@ -12,7 +12,7 @@ export default function SetRoutes(){
                 <Route path="/" element={<Welcome/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
-                <Route path="/app" element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
             </Routes>
         </BrowserRouter>
     );
