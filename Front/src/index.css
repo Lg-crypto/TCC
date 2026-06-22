@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
 :root {
 
   /* ======== Variables ======== */
@@ -13,6 +15,7 @@
   /* Fonts */
   --font-color: #D9D9D9;
   --font-default: Arial, helvetica, sans-serif;
+  --font-fantasy: "Itim", cursive;
 }
 
 /*

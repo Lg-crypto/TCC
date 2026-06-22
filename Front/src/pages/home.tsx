@@ -15,7 +15,7 @@ export default function Home() {
                         <LineChart
                             name="Ganhos (%)"
                             categories={['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}
-                            data={[30, 40, 35, 50, 49, 60, 35, 40, 49, 50, 39, 20]}
+                            data={[30, 40, 35, 50, 49, 60, 35, 40, 49, 50, 39, 60]}
                         >
                         </LineChart>
                     </Window>
