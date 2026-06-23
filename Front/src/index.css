@@ -6,9 +6,10 @@
 
   /* Colors */
   --primary-color: #1B1B1D;
-  --secondary-color: #212124;
+  --secondary-color: #1E1E22;
   --tertiary-color: #535353;
 
+  --auxiliary-color: #5702FF;
   --auxiliary-bad-color: #FF0267;
   --auxiliary-good-color: #02FFFF;
 

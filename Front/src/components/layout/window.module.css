@@ -1,6 +1,6 @@
 .window{
     background-color: var(--secondary-color);
-    border: 2px solid var(--tertiary-color);
+    /* border: 2px solid var(--tertiary-color); */
     border-radius: 20px;
     padding: 0 10px;
     overflow: hidden;
