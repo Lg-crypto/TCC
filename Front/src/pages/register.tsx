@@ -46,11 +46,11 @@ export default function Register(){
 
     const userAuthenticate = (data: FormValues)=>{
         setUserData({
-            name: '',
+            name: data.name,
             email: data.email,
             password: data.password
         });
-        setOpen(false)
+        setOpen(true)
         console.log(userData);
         //navigate('/home')
     }
@@ -68,20 +68,21 @@ export default function Register(){
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="text" inputName="Name" isRequired={true} register={register('name')}></Input>
                     <Input type="password" inputName="Password" isRequired={true} register={register('password')}></Input>
+                    { errors.name && <p>{errors.name.message}</p> }
                     { errors.email && <p>{errors.email.message}</p> }
                     { errors.password && <p>{errors.password.message}</p> }
 
                     <Button width={150} height={50}>Entrar</Button>
                     <ModalMessage
-                                            isOpen={open}
-                                            title="Aviso"
-                                            onClose={() => setOpen(false)}
-                                        >
-                                            
-                                            <p>Nome: {userData.name}</p>
-                                            <p>E-mail: {userData.email}</p>
-                                            <p>Senha: {userData.password}</p>
-                                        </ModalMessage>
+                        isOpen={open}
+                        title="Aviso"
+                        onClose={() => setOpen(false)}
+                    >
+                        
+                        <p>Nome: {userData.name}</p>
+                        <p>E-mail: {userData.email}</p>
+                        <p>Senha: {userData.password}</p>
+                    </ModalMessage>
                     <Link to="/register" className={styles.link}>Ainda não tem uma conta?</Link>
                 </form>
             </div>
