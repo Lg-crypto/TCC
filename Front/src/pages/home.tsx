@@ -19,6 +19,9 @@ export default function Home() {
                         >
                         </LineChart>
                     </Window>
+                    <Window width="73%" height="400px" className={styles.bottomWindow} >
+                        Aqui tera relatorios de registros e outros...
+                    </Window>
                     <Window
                         width="20vw"
                         height="calc(100vh - 24px)"

@@ -1,6 +1,6 @@
 .button{
     background-color: var(--auxiliary-color);
-    color: #fff;
+    color: var(--font-color);
     border: none;
     border-radius: 5px;
 }

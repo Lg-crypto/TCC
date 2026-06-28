@@ -6,11 +6,12 @@ interface WindowProps{
     height: string,
     padding?: string,
     children?: ReactNode,
+    className?: string,
 }
 
-export default function Window ({width, height, padding, children}: WindowProps) {
+export default function Window ({width, height, padding, children, className}: WindowProps) {
     return(
-        <div className={styles.window} style={{width: width, height: height, padding}}>
+        <div className={`${styles.window} ${className}`} style={{width: width, height: height, padding}}>
             {children}
         </div>
     )

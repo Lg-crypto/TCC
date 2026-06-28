@@ -15,7 +15,7 @@
     width: 320px;
     min-height: 160px;
 
-    background: #ffffff;
+    background: var(--font-color);
     border-radius: 12px;
 
     padding: 20px;
@@ -35,7 +35,7 @@
 }
 
 .header h2 {
-    font-size: 1.1rem;
+    font-size: var(--font-small-size);
     margin: 0;
 }
 
@@ -43,7 +43,7 @@
     border: none;
     background: transparent;
 
-    font-size: 1.2rem;
+    font-size: var(--font-small-size);
     cursor: pointer;
 
     transition: 0.2s;
@@ -54,7 +54,7 @@
 }
 
 .content {
-    color: #444;
+    color: var(--secondary-color);
     line-height: 1.5;
 }
 

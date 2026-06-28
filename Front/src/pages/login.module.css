@@ -26,10 +26,10 @@
 .logo{
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    background-color: grey;
+    border-radius: 10%;
+    background-color: var(--font-color);
 }
 
 .link{
-    color: var(--auxiliary-color);
+    color: var(--auxiliary-link-color);
 }

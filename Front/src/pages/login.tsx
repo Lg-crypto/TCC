@@ -8,6 +8,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
+import Logo from "../assets/logo.png"
 import { type UserType } from "../types/userType";
 import { useState } from "react";
 
@@ -61,7 +62,7 @@ export default function Login(){
                     className={styles.form}
                     onSubmit={handleSubmit(userAuthenticate)}    
                 >
-                    <div className={styles.logo}></div>
+                    <img src={Logo} className={styles.logo}></img>
 
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="password" inputName="Password" isRequired={true} register={register('password')}></Input>

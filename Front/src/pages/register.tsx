@@ -1,4 +1,4 @@
-import styles from "./login.module.css";
+import styles from "./register.module.css";
 import SideMenu from "../components/layout/sideMenu";
 import {Link, useNavigate} from "react-router-dom"
 import Button from "../components/layout/button"
@@ -8,6 +8,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
+import Logo from "../assets/logo.png";
 import { type UserType } from "../types/userType";
 import { useState } from "react";
 
@@ -63,7 +64,7 @@ export default function Register(){
                     className={styles.form}
                     onSubmit={handleSubmit(userAuthenticate)}    
                 >
-                    <div className={styles.logo}></div>
+                    <img src={Logo} className={styles.logo}></img>
 
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="text" inputName="Name" isRequired={true} register={register('name')}></Input>
@@ -83,7 +84,7 @@ export default function Register(){
                         <p>E-mail: {userData.email}</p>
                         <p>Senha: {userData.password}</p>
                     </ModalMessage>
-                    <Link to="/register" className={styles.link}>Ainda não tem uma conta?</Link>
+                    <Link to="/login" className={styles.link}>Já possui uma conta?</Link>
                 </form>
             </div>
         </div>

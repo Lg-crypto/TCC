@@ -11,16 +11,16 @@
     padding: 20px 15px 10px;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid var(--tertiary-color);
     outline: none;
-    color: white;
+    color: var(--font-color);
     font-size: 1rem;
     border-radius: 4px;
     transition: 0.3s;
 }
 
 .input:focus {
-    border-color: white;
+    border-color: var(--font-color);
 }
 
 .inputGroup label {
@@ -28,7 +28,7 @@
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #888;
+    color: var(--tertiary-color);
     font-size: 1rem;
     pointer-events: none;
     transition: 0.3s ease;
@@ -41,5 +41,5 @@
     top: 0;
     left: 10px;
     font-size: 0.85rem;
-    color: white;
+    color: var(--font-color);
 }

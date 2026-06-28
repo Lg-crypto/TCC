@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
 
@@ -9,14 +11,23 @@
   --secondary-color: #1E1E22;
   --tertiary-color: #535353;
 
-  --auxiliary-color: #5702FF;
+
+  --auxiliary-color: #360568;
   --auxiliary-bad-color: #FF0267;
   --auxiliary-good-color: #02FFFF;
+  --auxiliary-link-color: #0067EE;
 
   /* Fonts */
   --font-color: #D9D9D9;
-  --font-default: Arial, helvetica, sans-serif;
+  --font-default: "Poppins", sans-serif;
   --font-fantasy: "Itim", cursive;
+
+  --font-large-size: 60px;
+  --font-medium-size: 50px;
+  --font-small-size: 40px;
+  --font-little-size: 30px;
+  --font-bigtext-size: 20px;
+  --font-text-size: 16px;
 }
 
 /*
