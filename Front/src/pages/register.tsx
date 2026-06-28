@@ -30,7 +30,6 @@ const loginSchema = z.object({
 })
 
 export default function Register(){
-    const navigate = useNavigate();
     const [open, setOpen] = useState(false)
 
     const { 

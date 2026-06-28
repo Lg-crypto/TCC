@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./sideMenu.module.css"
 import { GoHomeFill, GoGraph } from "react-icons/go";
 import { IoPersonCircle } from "react-icons/io5";
