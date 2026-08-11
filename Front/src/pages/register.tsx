@@ -8,9 +8,9 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo-clara.png";
 import { type UserType } from "../types/userType";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type FormValues = {
     name: string
@@ -51,9 +51,18 @@ export default function Register(){
             password: data.password
         });
         setOpen(true)
-        console.log(userData);
-        //navigate('/home')
     }
+
+    useEffect(()=>{
+        let userDataStringfied = JSON.stringify(userData);
+        sessionStorage.setItem("UserData", userDataStringfied)
+        console.log(userData);
+    },[userData])
+
+
+
+
+
 
     return (
         <div className={styles.container}>

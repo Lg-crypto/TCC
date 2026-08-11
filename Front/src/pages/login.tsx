@@ -9,8 +9,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
 import Logo from "../assets/logo.png"
-import { type UserType } from "../types/userType";
-import { useState } from "react";
+//import { type UserType } from "../types/userType";
+import { useEffect, useState } from "react";
 
 type FormValues = {
     email: string,
@@ -28,7 +28,7 @@ const loginSchema = z.object({
 
 export default function Login(){
     
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const [open, setOpen] = useState(false)
 
     const { 
@@ -50,9 +50,16 @@ export default function Login(){
             password: data.password
         });
         setOpen(true);
-        console.log(userData);
         //navigate('/home')
     }
+
+
+    useEffect(()=>{
+        let userDataStringfied = JSON.stringify(userData);
+        sessionStorage.setItem("UserData", userDataStringfied)
+        console.log(userData);
+    },[userData])
+
 
     return (
         <div className={styles.container}>

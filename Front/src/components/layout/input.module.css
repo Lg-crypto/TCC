@@ -36,6 +36,19 @@
     padding: 0 5px;
 }
 
+.input {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Remove o fundo aplicado pelo autofill */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover{
+    -webkit-box-shadow: 0 0 0 1000px var(--secondary-color) inset;
+    -webkit-text-fill-color: white;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 .input:focus + label,
 .input:valid + label {
     top: 0;
