@@ -6,6 +6,32 @@ import RegisterCard from "../components/layout/registerCard";
 
 export default function Home() {
     
+    const records = [
+        {
+            gain: false,
+            value: 1500,
+            date: '15/08/2026',
+            description: 'House rent',
+            destination_or_source: 'House'
+        },
+        {
+            gain: false,
+            value: 121.67,
+            date: '14/08/2026',
+            description: 'Combo from Burger King',
+            destination_or_source: 'Food'
+        },
+        {
+            gain: true,
+            value: 1621.67,
+            date: '13/08/2026',
+            description: 'Salary',
+            destination_or_source: 'Salary'
+        },
+    ]
+
+
+
     return (
         <>
             <div className={styles.container}>
@@ -27,27 +53,20 @@ export default function Home() {
                         height="calc(100vh - 24px)"
                         padding="0px"
                     >
-                        <RegisterCard
-                            isGain={false}
-                            value={1500.00}
-                            description="House Rent"
-                            date="08/05/2026"
-                            destination="House"
-                        ></RegisterCard>
-                        <RegisterCard
-                            isGain={false}
-                            value={121.67}
-                            description="Burger King"
-                            date="07/05/2026"
-                            destination="Food"
-                        ></RegisterCard>
-                        <RegisterCard
-                            isGain={true}
-                            value={1621.67}
-                            description="salary"
-                            date="07/05/2026"
-                            source="Monthly salary"
-                        ></RegisterCard>
+                        {
+                            records.map((record)=>{
+
+                                return(
+                                    <RegisterCard
+                                        isGain={record.gain}
+                                        value={record.value}
+                                        description={record.description}
+                                        date={record.date}
+                                        destination_or_source={record.destination_or_source}
+                                    ></RegisterCard>
+                                )
+                            })
+                        }
                     </Window>
                 </div>
             </div>
