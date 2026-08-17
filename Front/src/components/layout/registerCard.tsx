@@ -30,7 +30,7 @@ const typesOfDestination = [
         icon: <LuShoppingCart size={30}/>
     },
     {
-        name: 'Streaming',
+        name: 'Entertainment',
         icon: <LuTv size={30}/>
     },
     {

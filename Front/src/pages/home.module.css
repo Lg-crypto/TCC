@@ -18,3 +18,20 @@
     top: 420px;
     right: calc(20vw + 15px);
 }
+.cardsContainer{
+    padding: 10px !important;
+    overflow-y: scroll !important;
+}
+.cardsContainer::-webkit-scrollbar {
+    width: 2px;
+}
+.cardsContainer::-webkit-scrollbar-thumb {
+  background: var(--font-color);
+  border-radius: 2px;
+}
+
+
+.recordGroupDates{
+    color: var(--font-darkened-color);
+    font-size: var(--font-text-size);
+}
