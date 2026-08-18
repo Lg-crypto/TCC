@@ -8,7 +8,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo-clara.png"
 //import { type UserType } from "../types/userType";
 import { useEffect, useState } from "react";
 

@@ -107,13 +107,7 @@ export default function Home() {
                         />
                     </Window>
 
-                    <Window
-                        width="73%"
-                        height="400px"
-                        className={styles.bottomWindow}
-                    >
-                        Aqui tera relatorios de registros e outros...
-                    </Window>
+                    
 
                     <Window
                         width="20vw"
