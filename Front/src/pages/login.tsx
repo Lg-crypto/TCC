@@ -1,6 +1,6 @@
 import styles from "./login.module.css";
 import SideMenu from "../components/layout/sideMenu";
-import {Link, useNavigate} from "react-router-dom"
+import {Link} from "react-router-dom"
 import Button from "../components/layout/button"
 import Input from "../components/layout/input";
 import { useForm } from "react-hook-form";
