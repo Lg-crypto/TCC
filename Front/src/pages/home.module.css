@@ -1,7 +1,37 @@
 .h2{
-    font-size: 50px;
+    font-size: var(--font-medium-size);
 }
 .container{
     padding: 10px;
     margin-left: 90px;
+}
+
+.content{
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    gap: 10px;
+}
+
+.bottomWindow{
+    position: absolute;
+    top: 420px;
+    right: calc(20vw + 15px);
+}
+.cardsContainer{
+    padding: 10px !important;
+    overflow-y: scroll !important;
+}
+.cardsContainer::-webkit-scrollbar {
+    width: 2px;
+}
+.cardsContainer::-webkit-scrollbar-thumb {
+  background: var(--font-color);
+  border-radius: 2px;
+}
+
+
+.recordGroupDates{
+    color: var(--font-darkened-color);
+    font-size: var(--font-text-size);
 }

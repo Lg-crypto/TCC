@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+
+  /* ======== Variables ======== */
+
+  /* Colors */
+  --primary-color: #1B1B1D;
+  --secondary-color: #1E1E22;
+  --tertiary-color: #2A2A2E;
+
+
+  --auxiliary-color: #360568;
+  --auxiliary-bad-color: #FF0267;
+  --auxiliary-good-color: #00C5C5;
+  --auxiliary-link-color: #0067EE;
+  --auxiliary-danger-color: #FF0000;
+
+  --font-color: #ececec;
+  --font-darkened-color: #7785AC;
+  
+  /* Fonts */
+  --font-default: "Poppins", sans-serif;
+  --font-fantasy: "Itim", cursive;
+
+  --font-large-size: 60px;
+  --font-medium-size: 50px;
+  --font-small-size: 40px;
+  --font-little-size: 30px;
+  --font-bigtext-size: 20px;
+  --font-text-size: 16px;
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {}
+}
+*/
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+} 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-default);
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-color);
+}

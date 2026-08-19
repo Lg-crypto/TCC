@@ -1,0 +1,67 @@
+.container{
+    width: 30vw;
+    height: 100vh;
+    border-right: 1px solid var(--tertiary-color);
+    padding: 24px;
+}
+
+.miniHeader{
+    display: flex;
+    gap: 10px;
+}
+
+.icon{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--auxiliary-color);
+    border-radius: 15px;
+}
+
+.miniHeaderTexts .title{
+    font-size: var(--font-bigtext-size);
+    height: min-content;
+}
+.miniHeaderTexts .subtitle{
+    font-size: var(--font-text-size);
+    font-weight: normal;
+}
+
+.optionsContainer{
+    margin-top: 16px;
+    display: grid;
+    grid-column: 1;
+    gap: 10px;
+}
+.subtitle{
+    font-size: calc(var(--font-bigtext-size) - 2px);
+    color: #ffffff80;
+    font-weight: normal;
+}
+.option{
+    width: 100%;
+    height: 45px;
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    border: 1px solid var(--tertiary-color);
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: var(--font-text-size);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option.deleteAccount{
+    color: var(--auxiliary-danger-color);
+}
+
+.option.help{
+    width: calc(30vw - 48px) !important;
+    position: fixed;
+    bottom: 24px;
+    color: var(--font-darkened-color);
+}

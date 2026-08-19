@@ -1,0 +1,45 @@
+.registerCard{
+    width: 100%;
+    height: 70px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+    border-radius: 20px;
+    padding: 10px;
+    border: 1px solid var(--tertiary-color);
+}
+.rightSide{
+    display: flex;
+}
+.icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.caption{
+    font-size: var(--font-text-size);
+    color: #7785AC;
+}
+
+.gainValue{
+    font-weight: bold;
+    color: var(--auxiliary-good-color);
+}
+.gainValue::before{
+    content: '+';
+}
+
+
+.expenseValue{
+    font-weight: bold;
+    color: var(--auxiliary-bad-color);
+}
+.expenseValue::before{
+    content: '-';
+}
