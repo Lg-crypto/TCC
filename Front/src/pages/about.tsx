@@ -27,7 +27,7 @@ export default function About (){
             </section>
             <section className={`${styles.section} ${styles.ourmission}`}>
                 <div className={styles.content}>
-                    <img  width={960} height={600} src={image} alt="Loading error" />
+                    <img  width={960} height={600} className={styles.ourMissionImage} src={image} alt="Loading error" />
                     <div>
                         <h2 className={styles.title}>Nossa missão</h2>
                         <ul className={styles.list}>
