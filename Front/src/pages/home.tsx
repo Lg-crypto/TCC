@@ -94,7 +94,6 @@ export default function Home() {
                                                 isGain={record.gain}
                                                 value={record.value}
                                                 description={record.description}
-                                                date={record.date}
                                                 destination_or_source={
                                                     record.destination_or_source
                                                 }

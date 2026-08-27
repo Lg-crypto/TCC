@@ -1,24 +1,25 @@
 import { Link } from "react-router-dom";
 import styles from "./sideMenu.module.css"
-import { GoHomeFill, GoGraph } from "react-icons/go";
-import { IoPersonCircle } from "react-icons/io5";
-import { IoMdPeople } from "react-icons/io";
-
+import { IoPersonCircleOutline } from "react-icons/io5";
+import { LuHouse, LuChartNoAxesColumn, LuPlus, LuUsers } from "react-icons/lu";
 export default function SideMenu (){
     return (
         <aside className={styles.container}>
             <nav className={styles.navigation}>
                 <Link to="/profile" className={styles.link}>
-                    <IoPersonCircle size={45}></IoPersonCircle>
+                    <IoPersonCircleOutline size={45}></IoPersonCircleOutline>
                 </Link>
                 <Link to="/" className={styles.link}>
-                    <GoHomeFill size={40}></GoHomeFill>
+                    <LuHouse size={40}></LuHouse>
                 </Link>
                 <Link to="/home" className={styles.link}>
-                    <GoGraph size={40}></GoGraph>
+                    <LuChartNoAxesColumn size={40}></LuChartNoAxesColumn>
+                </Link>
+                <Link to="/home/new" className={styles.link}>
+                    <LuPlus size={40}></LuPlus>
                 </Link>
                 <Link to="/about" className={styles.link}>
-                    <IoMdPeople size={40}></IoMdPeople>
+                    <LuUsers size={40}></LuUsers>
                 </Link>
             </nav>
         </aside>
