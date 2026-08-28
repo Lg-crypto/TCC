@@ -1,6 +1,6 @@
 import styles from "./register.module.css";
 import SideMenu from "../components/layout/sideMenu";
-import { Link, useNavigate } from "react-router-dom"
+import {Link} from "react-router-dom"
 import Button from "../components/layout/button"
 import Input from "../components/layout/input";
 import { useForm } from "react-hook-form";
@@ -9,9 +9,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
 import Logo from "../assets/logo-clara.png";
-import { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../services/firebase";
+import { type UserType } from "../types/userType";
+import { useEffect, useState } from "react";
 
 type FormValues = {
     name: string
@@ -32,7 +31,6 @@ const loginSchema = z.object({
 
 export default function Register(){
     const [open, setOpen] = useState(false)
-    const navigate = useNavigate();
 
     const { 
         register, handleSubmit, formState:{errors} 
@@ -40,21 +38,26 @@ export default function Register(){
         {resolver: zodResolver(loginSchema)}
     )
 
-    const userAuthenticate = async (data: FormValues) => {
-        try {
-            const credential = await createUserWithEmailAndPassword(
-                auth,
-                data.email,
-                data.password
-            );
+    const [userData, setUserData]= useState<UserType>({
+        name: '',
+        email: '',
+        password: ''
+    })
 
-            await updateProfile(credential.user, { displayName: data.name });
-            navigate("/home");
-        } catch (error) {
-            console.error(error);
-            setOpen(true);
-        }
-    };
+    const userAuthenticate = (data: FormValues)=>{
+        setUserData({
+            name: data.name,
+            email: data.email,
+            password: data.password
+        });
+        setOpen(true)
+    }
+
+    useEffect(()=>{
+        let userDataStringfied = JSON.stringify(userData);
+        sessionStorage.setItem("UserData", userDataStringfied)
+        console.log(userData);
+    },[userData])
 
 
 
@@ -85,7 +88,9 @@ export default function Register(){
                         onClose={() => setOpen(false)}
                     >
                         
-                        <p>Não foi possível criar sua conta. Verifique os dados e tente novamente.</p>
+                        <p>Nome: {userData.name}</p>
+                        <p>E-mail: {userData.email}</p>
+                        <p>Senha: {userData.password}</p>
                     </ModalMessage>
                     <Link to="/login" className={styles.link}>Já possui uma conta?</Link>
                 </form>
