@@ -13,7 +13,6 @@
     "@hookform/resolvers": "^5.4.0",
     "@types/react-router-dom": "^5.3.3",
     "apexcharts": "^5.13.0",
-    "firebase": "^12.18.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.5",
     "react-apexcharts": "^2.1.0",
