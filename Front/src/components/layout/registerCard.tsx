@@ -47,7 +47,7 @@ export default function RegisterCard ({isGain, value, description, destination_o
     const typeOfGainOrExpense = typesOfDestination.find(
         item => item.name === destination_or_source
     )
-
+    console.log(date);
 
     return(
         <div className={styles.registerCard}>
