@@ -2,6 +2,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    --font-little-size: 25px
 }
 
 .section{
@@ -108,4 +109,43 @@
 .text{
     width: 50vw;
     text-align: justify;
+}
+
+@media (width < 1400px) {
+    .section{
+        min-height: max-content;
+    }    
+    .ourmission .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .listDescription{
+        left: 0;
+    }
+    .ourMissionImage{
+        transform: scale(0.7);
+    }
+}
+@media (width < 1040px){
+    .container{
+        padding-left: 80px;
+    }
+    .text{
+        width: 70vw;
+    }
+    .ourmission .content{
+        justify-content: center;
+        gap: 0;
+    }
+    .ourMissionImage{
+        transform: scale(0.55);
+    }
+    .profile, .profile.reverse{
+        flex-direction: column;
+    }
+    .profile .text{
+        width: 60vw;
+    }
 }
