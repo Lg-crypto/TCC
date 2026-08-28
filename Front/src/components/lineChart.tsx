@@ -13,7 +13,7 @@ export default function LineChart ({categories, name, data}: LineChartProps){
     const options: ApexOptions = {
         chart: {
             type: 'line',
-            toolbar: { show: false } 
+            // toolbar: { show: false } 
         },
         xaxis: {
             categories: categories
