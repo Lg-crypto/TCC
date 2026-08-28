@@ -23,6 +23,7 @@ export default function modalMessage({
           <h2>{title}</h2>
 
           <button
+            type="button"
             className={styles.closeButton}
             onClick={onClose}
           >

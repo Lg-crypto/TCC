@@ -1,6 +1,6 @@
 import styles from "./login.module.css";
 import SideMenu from "../components/layout/sideMenu";
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Button from "../components/layout/button"
 import Input from "../components/layout/input";
 import { useForm } from "react-hook-form";
@@ -9,8 +9,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
 import Logo from "../assets/logo-clara.png"
-//import { type UserType } from "../types/userType";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../services/firebase";
 
 type FormValues = {
     email: string,
@@ -28,7 +29,7 @@ const loginSchema = z.object({
 
 export default function Login(){
     
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false)
 
     const { 
@@ -37,24 +38,15 @@ export default function Login(){
         {resolver: zodResolver(loginSchema)}
     )
 
-    const [userData, setUserData] = useState({
-        name: '',
-        email: ''
-    })
-
-    const userAuthenticate = (data: FormValues)=>{
-        setUserData({
-            name: '',
-            email: data.email
-        });
-        setOpen(true);
-        //navigate('/home')
-    }
-
-
-    useEffect(()=>{
-        sessionStorage.setItem("UserData", JSON.stringify(userData));
-    },[userData])
+    const userAuthenticate = async (data: FormValues) => {
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.password);
+            navigate("/home");
+        } catch (error) {
+            console.error(error);
+            setOpen(true);
+        }
+    };
 
 
     return (
@@ -79,8 +71,7 @@ export default function Login(){
                         onClose={() => setOpen(false)}
                     >
                         
-                        <p>Nome: {userData.name}</p>
-                        <p>E-mail: {userData.email}</p>
+                        <p>E-mail ou senha inválidos.</p>
                     </ModalMessage>
                     <Link to="/register" className={styles.link}>Ainda não tem uma conta?</Link>
                 </form>
