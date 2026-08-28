@@ -17,8 +17,8 @@ export default function SetRoutes(){
                 <Route path="/register" element={<Register/>} />
                 <Route element={<ProtectedRoute />}>
                     <Route path="/home" element={<Home/>}/>
-                        <Route path="/home/new" element={<NewRecordPage/>}></Route>
                     <Route path="/profile" element={<Profile/>} />
+                    <Route path="/home/new" element={<NewRecordPage/>}></Route>
                 </Route>
                 <Route path="/about" element={<About/>} ></Route>
             </Routes>
