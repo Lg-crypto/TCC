@@ -39,15 +39,13 @@ export default function Login(){
 
     const [userData, setUserData] = useState({
         name: '',
-        email: '',
-        password: ''
+        email: ''
     })
 
     const userAuthenticate = (data: FormValues)=>{
         setUserData({
             name: '',
-            email: data.email,
-            password: data.password
+            email: data.email
         });
         setOpen(true);
         //navigate('/home')
@@ -55,9 +53,7 @@ export default function Login(){
 
 
     useEffect(()=>{
-        let userDataStringfied = JSON.stringify(userData);
-        sessionStorage.setItem("UserData", userDataStringfied)
-        console.log(userData);
+        sessionStorage.setItem("UserData", JSON.stringify(userData));
     },[userData])
 
 
@@ -69,7 +65,7 @@ export default function Login(){
                     className={styles.form}
                     onSubmit={handleSubmit(userAuthenticate)}    
                 >
-                    <img src={Logo} className={styles.logo}></img>
+                    <img src={Logo} className={styles.logo} alt="WWallet" />
 
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="password" inputName="Password" isRequired={true} register={register('password')}></Input>
@@ -85,7 +81,6 @@ export default function Login(){
                         
                         <p>Nome: {userData.name}</p>
                         <p>E-mail: {userData.email}</p>
-                        <p>Senha: {userData.password}</p>
                     </ModalMessage>
                     <Link to="/register" className={styles.link}>Ainda não tem uma conta?</Link>
                 </form>

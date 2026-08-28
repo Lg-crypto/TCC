@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import styles from './modalMessage.module.css';
 
 interface ModalProps {
   isOpen: boolean,
   title: string,
-  children: React.ReactNode,
+  children: ReactNode,
   onClose: () => void;
 }
 

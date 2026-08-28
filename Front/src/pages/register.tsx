@@ -54,9 +54,10 @@ export default function Register(){
     }
 
     useEffect(()=>{
-        let userDataStringfied = JSON.stringify(userData);
-        sessionStorage.setItem("UserData", userDataStringfied)
-        console.log(userData);
+        sessionStorage.setItem("UserData", JSON.stringify({
+            name: userData.name,
+            email: userData.email
+        }));
     },[userData])
 
 
@@ -72,7 +73,7 @@ export default function Register(){
                     className={styles.form}
                     onSubmit={handleSubmit(userAuthenticate)}    
                 >
-                    <img src={Logo} className={styles.logo}></img>
+                    <img src={Logo} className={styles.logo} alt="WWallet" />
 
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="text" inputName="Name" isRequired={true} register={register('name')}></Input>
@@ -90,7 +91,6 @@ export default function Register(){
                         
                         <p>Nome: {userData.name}</p>
                         <p>E-mail: {userData.email}</p>
-                        <p>Senha: {userData.password}</p>
                     </ModalMessage>
                     <Link to="/login" className={styles.link}>Já possui uma conta?</Link>
                 </form>

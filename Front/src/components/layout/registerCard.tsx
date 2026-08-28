@@ -43,13 +43,11 @@ const typesOfDestination = [
     }
 ]
     
-export default function RegisterCard ({isGain, value, description, date, destination_or_source}:RegisterCardProps){
+export default function RegisterCard ({isGain, value, description, destination_or_source}:RegisterCardProps){
 
     const typeOfGainOrExpense = typesOfDestination.find(
         item => item.name === destination_or_source
     )
-    console.log(date);
-
     return(
         <div className={styles.registerCard}>
             <div className={styles.rightSide}>
