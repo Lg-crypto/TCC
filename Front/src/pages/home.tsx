@@ -6,44 +6,81 @@ import RegisterCard from "../components/layout/registerCard";
 
 import { type RecordType } from "../types/recordType";
 import { groupRecordsByDate } from "../functions/GroupRecordsByDate";
-import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { auth, db } from "../services/firebase";
 
 export default function Home() {
-    const [records, setRecords] = useState<RecordType[]>([]);
 
-    useEffect(() => {
-        let unsubscribeRecords: (() => void) | undefined;
-
-        const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
-            unsubscribeRecords?.();
-
-            if (!user) {
-                setRecords([]);
-                return;
-            }
-
-            const recordsQuery = query(
-                collection(db, "users", user.uid, "records"),
-                orderBy("dateKey", "desc")
-            );
-
-            unsubscribeRecords = onSnapshot(recordsQuery, (snapshot) => {
-                setRecords(snapshot.docs.map((document) => ({
-                    id: document.id,
-                    ...document.data(),
-                })) as RecordType[]);
-            });
-        });
-
-        return () => {
-            unsubscribeAuth();
-            unsubscribeRecords?.();
-        };
-    }, []);
-
+    const records: RecordType[] = [
+        {
+            gain: false,
+            value: 1500,
+            date: "15/08/2026",
+            description: "House rent",
+            destination_or_source: "House"
+        },
+        {
+            gain: false,
+            value: 121.67,
+            date: "14/08/2026",
+            description: "Combo from Burger King",
+            destination_or_source: "Food"
+        },
+        {
+            gain: true,
+            value: 1621.67,
+            date: "13/08/2026",
+            description: "Salary",
+            destination_or_source: "Salary"
+        },
+        {
+            gain: false,
+            value: 340.50,
+            date: "12/08/2026",
+            description: "Supermarket shopping",
+            destination_or_source: "Food"
+        },
+        {
+            gain: true,
+            value: 850.00,
+            date: "10/08/2026",
+            description: "Freelance web development",
+            destination_or_source: "Other"
+        },
+        {
+            gain: false,
+            value: 185.30,
+            date: "08/08/2026",
+            description: "Electricity bill",
+            destination_or_source: "House"
+        },
+        {
+            gain: false,
+            value: 119.90,
+            date: "05/08/2026",
+            description: "Fiber internet subscription",
+            destination_or_source: "House"
+        },
+        {
+            gain: true,
+            value: 25.40,
+            date: "04/08/2026",
+            description: "Credit card cashback",
+            destination_or_source: "Other"
+        },
+        {
+            gain: false,
+            value: 200.00,
+            date: "02/08/2026",
+            description: "Gas station",
+            destination_or_source: "Transport"
+        },
+        {
+            gain: false,
+            value: 75.00,
+            date: "01/08/2026",
+            description: "Movie ticket and snacks",
+            destination_or_source: "Entertainment"
+        }
+    ];
     const groupedRecords = groupRecordsByDate(records);
 
     const lineChartCategories = [
@@ -94,6 +131,7 @@ export default function Home() {
                                                 isGain={record.gain}
                                                 value={record.value}
                                                 description={record.description}
+                                                date={record.date}
                                                 destination_or_source={
                                                     record.destination_or_source
                                                 }

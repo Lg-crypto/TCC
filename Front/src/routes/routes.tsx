@@ -5,8 +5,7 @@ import Login from "../pages/login";
 import Register from "../pages/register";
 import About from "../pages/about";
 import Profile from "../pages/profile";
-import ProtectedRoute from "../components/layout/protectedRoute";
-import NewRecordPage from "../pages/newRecord";
+
 
 export default function SetRoutes(){
     return (
@@ -15,12 +14,9 @@ export default function SetRoutes(){
                 <Route path="/" element={<Welcome/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
-                <Route element={<ProtectedRoute />}>
-                    <Route path="/home" element={<Home/>}/>
-                        <Route path="/home/new" element={<NewRecordPage/>}></Route>
-                    <Route path="/profile" element={<Profile/>} />
-                </Route>
+                <Route path="/home" element={<Home/>} />
                 <Route path="/about" element={<About/>} ></Route>
+                <Route path="/profile" element={<Profile/>}></Route>
             </Routes>
         </BrowserRouter>
     );
