@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./sideMenu.module.css"
 import { IoPersonCircle } from "react-icons/io5";
-import { LuHouse, LuChartNoAxesColumn, LuUsers } from "react-icons/lu";
+import { LuHouse, LuChartNoAxesColumn, LuUsers, LuPlus } from "react-icons/lu";
 
 
 export default function SideMenu (){
@@ -16,6 +16,9 @@ export default function SideMenu (){
                 </Link>
                 <Link to="/home" className={styles.link}>
                     <LuChartNoAxesColumn size={40}></LuChartNoAxesColumn>
+                </Link>
+                <Link to="/home/new" className={styles.link}>
+                    <LuPlus size={40}></LuPlus>
                 </Link>
                 <Link to="/about" className={styles.link}>
                     <LuUsers size={40}></LuUsers>

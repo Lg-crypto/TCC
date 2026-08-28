@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         let unsubscribeRecords: (() => void) | undefined;
 
-        const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+        const unsubscribeAuth = onAuthStateChanged(auth, (user: any) => {
             unsubscribeRecords?.();
 
             if (!user) {
@@ -94,7 +94,6 @@ export default function Home() {
                                                 isGain={record.gain}
                                                 value={record.value}
                                                 description={record.description}
-                                                date={record.date}
                                                 destination_or_source={
                                                     record.destination_or_source
                                                 }

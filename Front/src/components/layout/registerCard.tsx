@@ -8,7 +8,6 @@ interface RegisterCardProps {
     isGain: boolean,
     value: number,
     description: string,
-    date: string, // <- Tipagem temporaria
     destination_or_source?: string
 }
 
@@ -43,7 +42,7 @@ const typesOfDestination = [
     }
 ]
     
-export default function RegisterCard ({isGain, value, description, date, destination_or_source}:RegisterCardProps){
+export default function RegisterCard ({isGain, value, description, destination_or_source}:RegisterCardProps){
 
     const typeOfGainOrExpense = typesOfDestination.find(
         item => item.name === destination_or_source
@@ -57,7 +56,6 @@ export default function RegisterCard ({isGain, value, description, date, destina
                 <div className={styles.description}>
                     <p className={styles.cardTitle}>{description}</p>
                     <p className={styles.caption}>{(isGain? 'Gain' : 'Expense')}</p>
-                    <p className={styles.caption}>{date}</p>
                 </div>
             </div>
             <div className={(isGain? styles.gainValue : styles.expenseValue)}>{value}</div>
