@@ -58,7 +58,7 @@ export default function About (){
                         <img src={fotoCaio} className={styles.profileImage}></img>
                         <div>
                             <h3 className={styles.subtitle}>Caio de Matos</h3>
-                            <p className={styles.text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, aut! Doloribus cumque omnis optio fugit asperiores culpa sed vel iure exercitationem itaque dolor earum commodi natus harum, facere totam soluta?</p>
+                            <p className={styles.text}>Olá! Meu nome é Caio, sou um estudante do curso de Desenvolvimento de sistemas da ETEC de Hortolândia, com interesses na área de tecnologia (mas sem uma área específica ainda) e em linguagens, além de uma grande afinidade com a perfumaria e a indústria de jogos. Venho buscando crescer principalmente emocionalmente e mentalmente para conseguir me dedicar a minha vida pessoal e profissional para realizar meus sonhos.</p>
                         </div>
                     </div>
                     <div className={styles.profile}>
