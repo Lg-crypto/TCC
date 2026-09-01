@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import styles from './modalMessage.module.css';
 
 interface ModalProps {
   isOpen: boolean,
   title: string,
-  children: React.ReactNode,
+  children: ReactNode,
   onClose: () => void;
 }
 
@@ -22,6 +23,7 @@ export default function modalMessage({
           <h2>{title}</h2>
 
           <button
+            type="button"
             className={styles.closeButton}
             onClick={onClose}
           >

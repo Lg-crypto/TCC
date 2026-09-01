@@ -1,22 +1,28 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "../pages/home";
 import Welcome from "../pages/welcome";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import About from "../pages/about";
 import Profile from "../pages/profile";
+import NewRecordPage from "../pages/newRecord";
+import ProtectedRoute from "../components/layout/protectedRoute";
 
 
-export default function SetRoutes(){
+export default function SetRoutes() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Welcome/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
-                <Route path="/home" element={<Home/>} />
-                <Route path="/about" element={<About/>} ></Route>
-                <Route path="/profile" element={<Profile/>}></Route>
+                <Route element={<ProtectedRoute />}>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/home/new" element={<NewRecordPage />} />
+                    <Route path="/profile" element={<Profile />} />
+                </Route>
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
     );

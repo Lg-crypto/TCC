@@ -1,3 +1,4 @@
+import type { UseFormRegisterReturn } from "react-hook-form";
 import styles from "./input.module.css"
 
 
@@ -5,7 +6,7 @@ interface inputProps{
     type: string,
     inputName: string,
     isRequired?: boolean,
-    register?: any
+    register?: UseFormRegisterReturn
 }
 
 export default function Input ({type, isRequired, inputName, register}: inputProps ) {
