@@ -35,7 +35,7 @@ const recordSchema = z.object({
     .trim()
     .min(3, "Informe uma descrição com ao menos 3 caracteres."),
   type: z.enum(["Gain", "Expense"]),
-  value: z.number().positive("Informe um valor maior que zero."),
+  value: z.number("informe um numero valido").positive("Informe um valor maior que zero."),
   category: z.string().min(1, "Selecione uma categoria."),
 });
 
@@ -84,7 +84,7 @@ export default function NewRecordPage() {
     const user = auth.currentUser;
 
     if (!user) {
-      //navigate("/login");
+      navigate("/login");
       return;
     }
 
@@ -102,7 +102,7 @@ export default function NewRecordPage() {
       });
 
       reset();
-      navigate("/home");
+      //navigate("/home");
     } catch (error) {
       console.error(error);
       setSubmitError("Não foi possível salvar o lançamento. Tente novamente.");

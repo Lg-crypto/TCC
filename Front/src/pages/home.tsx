@@ -36,6 +36,7 @@ export default function Home() {
                     ...document.data(),
                 })) as RecordType[]);
             });
+
         });
 
         return () => {
@@ -79,6 +80,8 @@ export default function Home() {
                         className={styles.cardsContainer}
                     >
                         {
+                        
+
                             groupedRecords.map((group) => (
                                 <div
                                     key={group.title}
