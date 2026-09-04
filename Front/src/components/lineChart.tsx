@@ -20,7 +20,7 @@ export default function LineChart ({categories, name, data}: LineChartProps){
         },
         yaxis:{
             axisBorder:{
-                show:true
+                show: false
             },
             labels: {
             formatter: (value) => {

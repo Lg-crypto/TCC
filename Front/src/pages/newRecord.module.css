@@ -61,6 +61,7 @@
 .cardsContainer {
     overflow-y: scroll;
     border-radius: 0;
+    padding-right: 10px !important;
 }
 
 .recordGroupDates{

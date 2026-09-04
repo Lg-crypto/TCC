@@ -2,7 +2,9 @@
     width: 30vw;
     height: 100vh;
     border-right: 1px solid var(--tertiary-color);
+    background-color: var(--primary-color);
     padding: 24px;
+    position: fixed;
 }
 
 .miniHeader{
@@ -64,4 +66,10 @@
     position: fixed;
     bottom: 24px;
     color: var(--font-darkened-color);
+}
+
+.option.back{
+    width: max-content;
+    position: absolute;
+    bottom: 80px;
 }

@@ -1,0 +1,22 @@
+.content{
+    position: absolute;
+    left: 32.5vw;
+    top: 5vh;
+    padding: 20px !important;
+}
+
+.title{
+    font-weight: normal;
+    color: var(--font-darkened-color);
+}
+
+.settingsRow{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.select{
+    background-color: var(--tertiary-color);
+    color: white;
+}
