@@ -18,7 +18,9 @@
 .link {
     color: var(--font-color);
 }
-
+.activeLink{
+    border-right: 5px solid var(--font-color);
+}
 .aboutButton {
     position: absolute;
     bottom: 10px;

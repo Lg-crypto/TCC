@@ -1,0 +1,49 @@
+.content{
+    position: absolute;
+    left: 32.5vw;
+    top: 5vh;
+    padding: 20px !important;
+}
+
+.panel{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    position: relative;
+}
+
+.panel::before{
+    content: "";
+    width: 100%;
+    height: 20vh;
+    background-image: linear-gradient(to right, #960ACD, #DDA6A6);
+    position: absolute;
+    z-index: 99;
+    border-radius: 10px 10px 0px 0px;
+}
+.panelName{
+    position: absolute;
+    top: 15vh;
+    left: 300px;
+    z-index: 999;
+    font-size: var(--font-little-size);
+}
+.panelImage{
+    position: absolute;
+    top: 6vh;
+    left: 30px;
+    z-index: 999;
+    border-radius: 50%;
+}
+
+.infos{
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 10px;
+}
+
+.infoTitle{
+    font-weight: normal;
+    color: var(--font-darkened-color);
+}

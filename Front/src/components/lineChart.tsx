@@ -20,8 +20,13 @@ export default function LineChart ({categories, name, data}: LineChartProps){
         },
         yaxis:{
             axisBorder:{
-                show:true
+                show: false
+            },
+            labels: {
+            formatter: (value) => {
+                return value.toFixed(2);
             }
+        }
         },
         grid:{
             yaxis:{
@@ -34,11 +39,10 @@ export default function LineChart ({categories, name, data}: LineChartProps){
             type: 'horizontal',
             
         },
-        //colors: ['#02FFFF', '#FF0267']
-
         colors: [
             (data[0] > data[data.length - 1]? '#FF0267' : '#02FFFF')
-        ]
+        ],
+        
     };
 
     const series: ApexNonAxisChartSeries = [
