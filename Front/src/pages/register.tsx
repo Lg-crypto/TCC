@@ -8,7 +8,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ModalMessage from "../components/layout/modalMessage";
 
-import Logo from "../assets/logo-clara.png";
+import Background from "../assets/Background-login.png";
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../services/firebase";
@@ -63,14 +63,14 @@ export default function Register(){
 
     return (
         <div className={styles.container}>
-            <SideMenu></SideMenu>
             <div className={styles.content}>
+                <div className={styles.imageContainer}>    
+                    <img className={styles.Background} src={Background} alt="" />
+                </div>
                 <form 
                     className={styles.form}
                     onSubmit={handleSubmit(userAuthenticate)}    
                 >
-                    <img src={Logo} className={styles.logo} alt="WWallet" />
-
                     <Input type="email" inputName="E-mail" isRequired={true} register={register('email')}></Input>
                     <Input type="text" inputName="Name" isRequired={true} register={register('name')}></Input>
                     <Input type="password" inputName="Password" isRequired={true} register={register('password')}></Input>
