@@ -1,5 +1,4 @@
 import styles from "./login.module.css";
-import SideMenu from "../components/layout/sideMenu";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/layout/button";
 import Input from "../components/layout/input";
@@ -8,7 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ModalMessage from "../components/layout/modalMessage";
 
-import Logo from "../assets/logo-clara.png";
+import Background from "../assets/Background-login.png";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/firebase";
@@ -48,10 +47,14 @@ export default function Login() {
 
   return (
     <div className={styles.container}>
-      <SideMenu></SideMenu>
       <div className={styles.content}>
-        <form className={styles.form} onSubmit={handleSubmit(userAuthenticate)}>
-          <img src={Logo} className={styles.logo} alt="WWallet" />
+        <div className={styles.imageContainer}>
+          <img className={styles.Background} src={Background} alt="" />
+        </div>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit(userAuthenticate)}
+        >
 
           <Input
             type="email"
