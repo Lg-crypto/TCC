@@ -7,7 +7,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import ModalMessage from "../components/layout/modalMessage";
 
-import Background from "../assets/Background-login.png";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../services/firebase";
@@ -49,7 +48,7 @@ export default function Login() {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.imageContainer}>
-          <img className={styles.Background} src={Background} alt="" />
+          <div className={styles.Background}></div>
         </div>
         <form
           className={styles.form}

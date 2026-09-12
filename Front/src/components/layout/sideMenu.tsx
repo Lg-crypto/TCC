@@ -32,7 +32,7 @@ export default function SideMenu() {
           <LuChartNoAxesColumn size={40}></LuChartNoAxesColumn>
         </NavLink>
         <NavLink
-          to="/home/new"
+          to="/newrecord"
           className={({ isActive }) =>
             `${styles.link} ${isActive ? styles.activeLink : ""}`
           }

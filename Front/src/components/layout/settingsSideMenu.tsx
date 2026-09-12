@@ -39,7 +39,7 @@ export default function SettingsSideMenu () {
                 <NavLink to={'/profile/account'} className={(styles.option) +" "+ (styles.help)}>
                     <LuCircleHelp size={20}/> Precisa de ajuda? Acesse o centro de ajuda.
                 </NavLink>
-                <NavLink to={'/'} className={(styles.option) +" "+ (styles.back)}>
+                <NavLink to={'/home'} className={(styles.option) +" "+ (styles.back)}>
                     <LuArrowLeft size={20}/>
                 </NavLink>
             </nav>
