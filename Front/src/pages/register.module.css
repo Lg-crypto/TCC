@@ -1,32 +1,37 @@
 .container{
     height: 100vh;
-    margin-left: 90px;
 }
 
 .content{
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
 
 .form{
-    width: 590px;
-    height: max-content;
+    min-width: max-content;
+    width: 50vw;
+    height: 100vh;
     background-color: var(--secondary-color);
     padding: 20px;
-    border-radius: 14px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px;
 }
 
-.logo{
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
+.imageContainer{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+
+.Background{
+    width: 40vw;
+    height: 40vw;
 }
 
 .link{

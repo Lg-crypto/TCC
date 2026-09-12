@@ -1,35 +1,40 @@
 .container{
     height: 100vh;
-    margin-left: 90px;
 }
 
 .content{
     width: 100%;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    background-color: var(--primary-color);
 }
 
 .form{
-    width: 590px;
-    height: 650px;
+    min-width: max-content;
+    width: 40vw;
+    height: 100vh;
     background-color: var(--secondary-color);
     padding: 20px;
-    border-radius: 14px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 50px;
 }
 
-.logo{
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
-    filter: drop-shadow(0 0 1px black);
-    /* background-color: var(--font-color); */
+.imageContainer{
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+}
+
+.Background{
+    width: 60vw;
+    height: 100vw;
+    background-image: url(../assets/Background-Login.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 .link{

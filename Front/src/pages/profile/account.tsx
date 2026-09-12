@@ -1,44 +1,145 @@
-import styles from "./account.module.css"
+import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { onAuthStateChanged, type User } from "firebase/auth";
+import {
+  LuBadgeCheck,
+  LuMail,
+  LuPhone,
+  LuShieldCheck,
+  LuUserRound,
+} from "react-icons/lu";
 import SettingsSideMenu from "../../components/layout/settingsSideMenu";
-import Foto from "../../assets/Higor.png"
 import Window from "../../components/layout/window";
+import { auth } from "../../services/firebase";
+import styles from "./account.module.css";
 
-export default function Account () {
-    return (
-        <section className={styles.container}>
-            <SettingsSideMenu></SettingsSideMenu>
-            <Window width={"65vw"} height={"90vh"} className={styles.content}>
-                <div className={styles.panel}>
-                    <h2 className={styles.panelName}>Halejandro</h2>
-                    <img src={Foto} alt="" width={250} height={250} className={styles.panelImage}/>
-                </div>
-                <div className={styles.infos}>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>Primeiro Nome</h4>
-                        <p className={styles.infoText}>Francisco</p>
-                    </div>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>Ultimo Nome</h4>
-                        <p className={styles.infoText}>Halejandro</p>
-                    </div>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>Numero de telefone</h4>
-                        <p className={styles.infoText}>19 96969-6969</p>
-                    </div>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>Endereço de Email</h4>
-                        <p className={styles.infoText}>hl.dev.ho@gmail.com</p>
-                    </div>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>senha</h4>
-                        <p className={styles.infoText}>******</p>
-                    </div>
-                    <div className={styles.info}>
-                        <h4 className={styles.infoTitle}>...</h4>
-                        <p className={styles.infoText}>...</p>
-                    </div>
-                </div>
-            </Window>
-        </section>
-    );
+function getInitials(name: string) {
+  return (
+    name
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase() || "U"
+  );
+}
+
+function getProviderName(user: User) {
+  const provider = user.providerData[0]?.providerId;
+  if (provider === "google.com") return "Google";
+  if (provider === "password") return "E-mail e senha";
+  if (provider === "phone") return "Telefone";
+  return "Conta FinanControl";
+}
+
+export default function Account() {
+  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [imageFailed, setImageFailed] = useState(false);
+
+  useEffect(() => onAuthStateChanged(auth, setUser), []);
+  useEffect(() => setImageFailed(false), [user?.uid]);
+
+  const profile = useMemo(() => {
+    const displayName =
+      user?.displayName?.trim() || user?.email?.split("@")[0] || "Usuário";
+    const nameParts = displayName.split(" ").filter(Boolean);
+    return {
+      displayName,
+      firstName: nameParts[0] || "Não informado",
+      lastName: nameParts.slice(1).join(" ") || "Não informado",
+    };
+  }, [user]);
+
+  return (
+    <section className={styles.container}>
+      <SettingsSideMenu />
+      <Window width="65vw" height="90vh" className={styles.content}>
+        {user ? (
+          <>
+            <header className={styles.panel}>
+              <div className={styles.cover} />
+              <div className={styles.avatar}>
+                {user.photoURL && !imageFailed ? (
+                  <img
+                    src={user.photoURL}
+                    alt={`Foto de perfil de ${profile.displayName}`}
+                    onError={() => setImageFailed(true)}
+                  />
+                ) : (
+                  <span>{getInitials(profile.displayName)}</span>
+                )}
+              </div>
+              <div className={styles.profileHeading}>
+                <h1>{profile.displayName}</h1>
+                <p>{getProviderName(user)}</p>
+              </div>
+            </header>
+            <div className={styles.infos}>
+              <InfoItem
+                icon={<LuUserRound />}
+                label="Primeiro nome"
+                value={profile.firstName}
+              />
+              <InfoItem
+                icon={<LuUserRound />}
+                label="Último nome"
+                value={profile.lastName}
+              />
+              <InfoItem
+                icon={<LuMail />}
+                label="Endereço de e-mail"
+                value={user.email || "Não informado"}
+              />
+              <InfoItem
+                icon={<LuPhone />}
+                label="Número de telefone"
+                value={user.phoneNumber || "Não informado"}
+              />
+              <InfoItem
+                icon={<LuBadgeCheck />}
+                label="E-mail verificado"
+                value={
+                  user.emailVerified ? "Verificado" : "Ainda não verificado"
+                }
+              />
+              <InfoItem
+                icon={<LuShieldCheck />}
+                label="ID da conta"
+                value={user.uid}
+                mono
+              />
+            </div>
+            <p className={styles.readOnlyNotice}>
+              Estas informações estão disponíveis apenas para consulta por
+              enquanto.
+            </p>
+          </>
+        ) : (
+          <div className={styles.loading}>Carregando dados da conta…</div>
+        )}
+      </Window>
+    </section>
+  );
+}
+
+function InfoItem({
+  icon,
+  label,
+  value,
+  mono = false,
+}: {
+  icon: ReactNode;
+  label: string;
+  value: string;
+  mono?: boolean;
+}) {
+  return (
+    <article className={styles.info}>
+      <span className={styles.infoIcon}>{icon}</span>
+      <div>
+        <h2>{label}</h2>
+        <p className={mono ? styles.mono : ""}>{value}</p>
+      </div>
+    </article>
+  );
 }

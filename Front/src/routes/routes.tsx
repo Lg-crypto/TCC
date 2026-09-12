@@ -15,10 +15,10 @@ export default function SetRoutes() {
             <Routes>
                 {/* <Route path="/" element={<Welcome/>} /> */}
                 <Route path="/" element={<Login/>} />
-                <Route path="/register" element={<Register/>} />
+                <Route path="/register/" element={<Register/>} />
                 <Route element={<ProtectedRoute />}>
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/home/new" element={<NewRecordPage />} />
+                    <Route path="/home/" element={<Home />} />
+                    <Route path="/newrecord/" element={<NewRecordPage />} />
                     <Route path="/profile/" element={<Account />} />
                     <Route path="/profile/settings" element={<Settings/>} />
                 </Route>
