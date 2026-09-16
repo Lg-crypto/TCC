@@ -4,7 +4,7 @@ import image from "../assets/image1.png";
 import fotoHigor from "../assets/Higor.png"
 import fotoYoshida from "../assets/Yoshida.png"
 import fotoHalejandro from "../assets/Halejandro.png"
-import fotoCaio from "../assets/Caio.png"
+import fotoCaio from "../assets/Caio.jpg"
 
 import SideMenu from "../components/layout/sideMenu";
 
