@@ -9,7 +9,7 @@
     width: 100%;
     height: 60px;
     padding: 20px 15px 10px;
-    background: transparent;
+    background-color: var(--input-color);
     border: none;
     border-bottom: 2px solid var(--tertiary-color);
     outline: none;
@@ -36,10 +36,6 @@
     padding: 0 5px;
 }
 
-.input {
-    background-color: var(--secondary-color);
-    color: white;
-}
 
 /* Remove o fundo aplicado pelo autofill */
 .input:-webkit-autofill,
