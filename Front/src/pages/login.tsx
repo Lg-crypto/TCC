@@ -1,38 +1,27 @@
 import styles from "./login.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../components/layout/button";
-import Input from "../components/layout/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import ModalMessage from "../components/layout/modalMessage";
-
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import ModalMessage from "../components/layout/modalMessage";
 import { auth } from "../services/firebase";
+import Google from "../assets/google-icon.svg"
 
-type FormValues = {
-  email: string;
-  password: string;
-};
+
+
+type FormValues = { email: string; password: string };
 
 const loginSchema = z.object({
   email: z.email({ message: "Informe um e-mail válido." }),
-
-  password: z
-    .string()
-    .min(6, { message: "Informe uma senha com 6 caracteres ou mais." }),
+  password: z.string().min(6, { message: "Informe uma senha com 6 caracteres ou mais." }),
 });
 
 export default function Login() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<FormValues>({ resolver: zodResolver(loginSchema) });
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver: zodResolver(loginSchema) });
 
   const userAuthenticate = async (data: FormValues) => {
     try {
@@ -44,47 +33,79 @@ export default function Login() {
     }
   };
 
+  const authenticateWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, new GoogleAuthProvider());
+      navigate("/home");
+    } catch (error) {
+      console.error(error);
+      setOpen(true);
+    }
+  };
+
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <div className={styles.imageContainer}>
-          <div className={styles.Background}></div>
-        </div>
-        <form
-          className={styles.form}
-          onSubmit={handleSubmit(userAuthenticate)}
-        >
-
-          <Input
-            type="email"
-            inputName="E-mail"
-            isRequired={true}
-            register={register("email")}
-          ></Input>
-          <Input
-            type="password"
-            inputName="Password"
-            isRequired={true}
-            register={register("password")}
-          ></Input>
-          {errors.email && <p>{errors.email.message}</p>}
-          {errors.password && <p>{errors.password.message}</p>}
-
-          <Button width={150} height={50}>
-            Entrar
-          </Button>
-          <ModalMessage
-            isOpen={open}
-            title="Aviso"
-            onClose={() => setOpen(false)}
-          >
-            <p>E-mail ou senha inválidos.</p>
-          </ModalMessage>
-          <Link to="/register" className={styles.link}>
-            Ainda não tem uma conta?
-          </Link>
+    <main className={styles.page}>
+      <section className={styles.photoPanel} aria-hidden="true" />
+      <section className={styles.authPanel}>
+        <form className={styles.form} onSubmit={handleSubmit(userAuthenticate)}>
+          <nav className={styles.tabs} aria-label="Autenticação">
+            <Link to="/register">Sign up</Link>
+            <span className={styles.activeTab}>Login</span>
+          </nav>
+          <h1>Sign in</h1>
+          <div className={styles.fields}>
+            <label className={styles.field}>
+              <span className={styles.srOnly}>E-mail</span>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                autoComplete="email"
+                {...register("email")}
+              />
+            </label>
+            <label className={styles.field}>
+              <span className={styles.srOnly}>Senha</span>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                autoComplete="current-password"
+                {...register("password")}
+              />
+            </label>
+            <Link className={styles.forgotPassword} to="/login">
+              forgot my password
+            </Link>
+          </div>
+          {(errors.email || errors.password) && (
+            <p className={styles.error}>
+              {errors.email?.message ?? errors.password?.message}
+            </p>
+          )}
+          <button className={styles.primaryButton} type="submit">
+            Sign in
+          </button>
+          <div className={styles.divider}>
+            <span />
+            or sign in with
+            <span />
+          </div>
+          <div className={styles.socialButtons}>
+            <button
+              className={`${styles.socialButton} ${styles.google}`}
+              type="button"
+              onClick={authenticateWithGoogle}
+              aria-label="Entrar com Google"
+            >
+              <img src={Google} alt="" />
+            </button>
+          </div>
         </form>
-      </div>
-    </div>
+      </section>
+      <ModalMessage isOpen={open} title="Aviso" onClose={() => setOpen(false)}>
+        <p>
+          Não foi possível autenticar. Verifique os dados e tente novamente.
+        </p>
+      </ModalMessage>
+    </main>
   );
 }
