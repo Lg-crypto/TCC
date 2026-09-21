@@ -5,5 +5,6 @@ export type RecordType = {
     date: string,
     dateKey: string,
     description: string,
-    destination_or_source: string
+    destination_or_source: string,
+    comment?: string
 }

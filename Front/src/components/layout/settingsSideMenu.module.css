@@ -18,7 +18,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--auxiliary-color);
+    background-color: var(--surface-raised-color);
+    border: 1px solid var(--tertiary-color);
     border-radius: 15px;
 }
 
@@ -39,7 +40,7 @@
 }
 .subtitle{
     font-size: calc(var(--font-bigtext-size) - 2px);
-    color: #ffffff80;
+    color: var(--font-darkened-color);
     font-weight: normal;
 }
 .option{

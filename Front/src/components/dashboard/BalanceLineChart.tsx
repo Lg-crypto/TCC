@@ -20,19 +20,19 @@ export default function BalanceLineChart({
       fontFamily: "Poppins, sans-serif",
     },
     stroke: { curve: "straight", width: 2 },
-    colors: ["#18d6b4"],
-    grid: { borderColor: "#313239", strokeDashArray: 3 },
+    colors: ["#24d878"],
+    grid: { borderColor: "#2b2e38", strokeDashArray: 3 },
     xaxis: {
       categories,
-      labels: { style: { colors: "#8d909a", fontSize: "10px" } },
-      axisBorder: { color: "#313239" },
+      labels: { style: { colors: "#9a9ca8", fontSize: "10px" } },
+      axisBorder: { color: "#2b2e38" },
       axisTicks: { show: false },
     },
     yaxis: {
       labels: {
         formatter: (value) =>
           value >= 1000 ? `${(value / 1000).toFixed(1)}k` : value.toFixed(0),
-        style: { colors: "#8d909a", fontSize: "10px" },
+        style: { colors: "#9a9ca8", fontSize: "10px" },
       },
     },
     tooltip: { theme: "dark", y: { formatter: formatCurrency } },

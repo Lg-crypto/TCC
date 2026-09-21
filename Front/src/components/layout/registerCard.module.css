@@ -24,7 +24,7 @@
 
 .caption{
     font-size: var(--font-text-size);
-    color: #7785AC;
+    color: var(--font-darkened-color);
 }
 
 .gainValue{

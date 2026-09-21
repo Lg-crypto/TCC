@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "./sideMenu.module.css";
 import { IoPersonCircle } from "react-icons/io5";
-import { LuHouse, LuChartNoAxesColumn, LuUsers, LuPlus } from "react-icons/lu";
+import { LuChartNoAxesColumn, LuHouse, LuPlus, LuSettings } from "react-icons/lu";
 
 export default function SideMenu() {
   return (
@@ -13,7 +13,7 @@ export default function SideMenu() {
             `${styles.link} ${isActive ? styles.activeLink : ""}`
           }
         >
-          <IoPersonCircle size={45}></IoPersonCircle>
+          <IoPersonCircle size={25} />
         </NavLink>
         <NavLink
           to="/"
@@ -21,7 +21,7 @@ export default function SideMenu() {
             `${styles.link} ${isActive ? styles.activeLink : ""}`
           }
         >
-          <LuHouse size={40}></LuHouse>
+          <LuHouse size={22} />
         </NavLink>
         <NavLink
           to="/home"
@@ -29,7 +29,7 @@ export default function SideMenu() {
             `${styles.link} ${isActive ? styles.activeLink : ""}`
           }
         >
-          <LuChartNoAxesColumn size={40}></LuChartNoAxesColumn>
+          <LuChartNoAxesColumn size={22} />
         </NavLink>
         <NavLink
           to="/newrecord"
@@ -37,7 +37,7 @@ export default function SideMenu() {
             `${styles.link} ${isActive ? styles.activeLink : ""}`
           }
         >
-          <LuPlus size={40}></LuPlus>
+          <LuPlus size={22} />
         </NavLink>
         <NavLink
           to="/about"
@@ -45,7 +45,7 @@ export default function SideMenu() {
             `${styles.link} ${styles.aboutButton} ${isActive ? styles.activeLink : ""}`
           }
         >
-          <LuUsers size={40}></LuUsers>
+          <LuSettings size={22} />
         </NavLink>
       </nav>
     </aside>

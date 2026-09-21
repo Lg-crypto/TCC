@@ -19,7 +19,7 @@
 
 .cover {
     height: 150px;
-    background: linear-gradient(110deg, #5b36ad, #9b66d9 55%, #e0a9ac);
+    background: linear-gradient(110deg, #161820, #292d37 55%, #2b2e38);
     border-radius: 10px 10px 0 0
 }
 
@@ -34,7 +34,7 @@
     overflow: hidden;
     border: 5px solid var(--secondary-color);
     border-radius: 50%;
-    background: #4c2979;
+    background: var(--surface-raised-color);
     color: white;
     font-size: 36px;
     font-weight: 600
@@ -86,8 +86,8 @@
     flex: 0 0 auto;
     place-items: center;
     border-radius: 8px;
-    color: #d9c2ff;
-    background: #3b2a50
+    color: #c9ceda;
+    background: var(--input-color)
 }
 
 .info h2 {
@@ -105,7 +105,7 @@
 .mono {
     font-family: monospace;
     font-size: 11px !important;
-    color: #c9c9cf
+    color: #abb2c2
 }
 
 .readOnlyNotice {
