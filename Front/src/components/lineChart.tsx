@@ -40,7 +40,7 @@ export default function LineChart ({categories, name, data}: LineChartProps){
             
         },
         colors: [
-            (data[0] > data[data.length - 1]? '#FF0267' : '#02FFFF')
+            (data[0] > data[data.length - 1] ? '#ff4e7b' : '#24d878')
         ],
         
     };

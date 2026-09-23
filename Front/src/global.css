@@ -7,20 +7,23 @@
   /* ======== Variables ======== */
 
   /* Colors */
-  --primary-color: #1B1B1D;
-  --secondary-color: #1E1F24;
-  --tertiary-color: #2A2A2E;
+  /* Paleta-base da página de registros */
+  --primary-color: #0c0d10;
+  --secondary-color: #17191f;
+  --tertiary-color: #2b2e38;
+  --input-color: #101218;
+  --surface-raised-color: #161820;
+  --border-strong-color: #30343f;
+  --focus-color: #6a7080;
 
-  --input-color: #27272C;
+  --auxiliary-color: #23cb6b;
+  --auxiliary-bad-color: #ff4e7b;
+  --auxiliary-good-color: #24d878;
+  --auxiliary-link-color: #23cb6b;
+  --auxiliary-danger-color: #ff4e7b;
 
-  --auxiliary-color: #360568;
-  --auxiliary-bad-color: #FF0267;
-  --auxiliary-good-color: #00C5C5;
-  --auxiliary-link-color: #0067EE;
-  --auxiliary-danger-color: #FF0000;
-
-  --font-color: #ececec;
-  --font-darkened-color: #7785AC;
+  --font-color: #f5f5f6;
+  --font-darkened-color: #9a9ca8;
   
   /* Fonts */
   --font-default: "Poppins", sans-serif;

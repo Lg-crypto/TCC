@@ -14,11 +14,11 @@ export default function MonthlyExpensesChart({
       background: "transparent",
       fontFamily: "Poppins, sans-serif",
     },
-    colors: ["#777af0"],
+    colors: ["#ff4e7b"],
     plotOptions: { bar: { borderRadius: 3, columnWidth: "60%" } },
     xaxis: {
       categories: data.map((item) => item.label),
-      labels: { style: { colors: "#8d909a", fontSize: "9px" } },
+      labels: { style: { colors: "#9a9ca8", fontSize: "9px" } },
       axisBorder: { show: false },
       axisTicks: { show: false },
     },
@@ -26,10 +26,10 @@ export default function MonthlyExpensesChart({
       labels: {
         formatter: (value) =>
           value >= 1000 ? `${(value / 1000).toFixed(1)}k` : value.toFixed(0),
-        style: { colors: "#8d909a", fontSize: "9px" },
+        style: { colors: "#9a9ca8", fontSize: "9px" },
       },
     },
-    grid: { borderColor: "#313239", strokeDashArray: 3 },
+    grid: { borderColor: "#2b2e38", strokeDashArray: 3 },
     dataLabels: { enabled: false },
     tooltip: { theme: "dark", y: { formatter: formatCurrency } },
   };

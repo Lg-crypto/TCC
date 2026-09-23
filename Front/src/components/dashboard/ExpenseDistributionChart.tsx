@@ -12,7 +12,7 @@ type ExpenseDistributionChartProps = {
   legendClassName: string;
   emptyClassName: string;
 };
-const colors = ["#787cf2", "#19d0a8", "#bf8af7", "#f1b662", "#f16b8a"];
+const colors = ["#24d878", "#23cb6b", "#aeb4c4", "#ff4e7b", "#8b8e9a"];
 
 export default function ExpenseDistributionChart({
   data,
@@ -35,18 +35,18 @@ export default function ExpenseDistributionChart({
     colors,
     legend: { show: false },
     dataLabels: { enabled: false },
-    stroke: { colors: ["#222328"], width: 2 },
+    stroke: { colors: ["#17191f"], width: 2 },
     plotOptions: {
       pie: {
         donut: {
           size: "67%",
           labels: {
             show: true,
-            value: { fontSize: "14px", color: "#ffffff" },
+            value: { fontSize: "14px", color: "#f5f5f6" },
             total: {
               show: true,
               label: "TOTAL",
-              color: "#8d909a",
+              color: "#9a9ca8",
               fontSize: "16px",
               formatter: () => formatCurrency(total),
             },
